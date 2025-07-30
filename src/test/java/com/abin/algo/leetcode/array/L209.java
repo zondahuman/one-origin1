@@ -31,6 +31,6 @@ public class L209 {
         }
         return result == Integer.MAX_VALUE ? 0 : result;
     }
-    
+
 
 }
