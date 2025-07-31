@@ -19,40 +19,61 @@ public class L239 {
      * @return
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
-        int preLen = 0;
-        Deque<Integer> queue = new LinkedList<>();
-        int tsize = 0;
-        for(int num:nums) {
-            if(tsize>=k)
-                break;
-            queue.add(num);
-            tsize++;
-        }
-        int size = nums.length-k+1;
-        int[] result = new int[size];
-        int total = 0;
-        while(total<nums.length){
-            int temp = Integer.MIN_VALUE;
-            for(Iterator<Integer> iterator=queue.iterator();iterator.hasNext();){
-                int num = iterator.next();
-                temp = Math.max(temp, num);
+        int n = nums.length;
+        Deque<Integer> deque = new LinkedList<>();
+        for (int i = 0; i <k ; i++) {
+            while(!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]){
+                deque.pollLast();
             }
-            result[preLen] = temp;
-            total = preLen + k;
-            if(total != nums.length){
-                queue.pop();
-                queue.addLast(nums[total]);
-            }
-            preLen++;
+            deque.offerLast(i);
         }
-        return result;
+        int[] result = new int[n-k+1];
+        result[0] = nums[deque.peekFirst()];
+        for (int i = k; i <n ; i++) {
+            while(!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]){
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+            while(deque.peekFirst()<=i-k){
+                deque.pollFirst();
+            }
+            result[i-k+1] = nums[deque.peekFirst()];
+        }
+         return result;
+    }
+
+
+    public int[] maxSlidingWindowOffical(int[] nums, int k) {
+        int n = nums.length;
+        Deque<Integer> deque = new LinkedList<Integer>();
+        for (int i = 0; i < k; ++i) {
+            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+        }
+
+        int[] ans = new int[n - k + 1];
+        ans[0] = nums[deque.peekFirst()];
+        for (int i = k; i < n; ++i) {
+            while (!deque.isEmpty() && nums[i] >= nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+            while (deque.peekFirst() <= i - k) {
+                deque.pollFirst();
+            }
+            ans[i - k + 1] = nums[deque.peekFirst()];
+        }
+        return ans;
     }
 
     @Test
     public void test1(){
         int[] nums = new int[]{1,3,-1,-3,5,3,6,7};
         int k = 3 ;
-        int[] result = maxSlidingWindow(nums, k);
+//        int[] result = maxSlidingWindow(nums, k);
+        int[] result = maxSlidingWindowOffical(nums, k);
         System.out.println("result="+ JsonUtil.toJson(result));
     }
 
