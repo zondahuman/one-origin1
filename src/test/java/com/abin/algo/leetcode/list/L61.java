@@ -1,4 +1,4 @@
-package com.abin.algo.leetcode.array;
+package com.abin.algo.leetcode.list;
 
 import org.junit.Test;
 
