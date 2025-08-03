@@ -1,4 +1,4 @@
-package com.abin.algo.leetcode.array;
+package com.abin.algo.leetcode.list;
 
 /**
  * 86. 分隔链表

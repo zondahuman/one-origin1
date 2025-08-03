@@ -1,4 +1,4 @@
-package com.abin.algo.leetcode.array;
+package com.abin.algo.leetcode.dp;
 
 public class L53 {
     public int maxSubArray(int[] nums) {
