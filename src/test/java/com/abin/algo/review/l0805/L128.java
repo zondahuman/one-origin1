@@ -7,22 +7,27 @@ import java.util.Set;
 public class L128 {
 
     public int longestConsecutive(int[] nums) {
-        if(nums.length == 0) return 0;
-        Set<Integer> set = new HashSet<>();
-        int min = Integer.MAX_VALUE;
-        for(int num:nums){
-            min = Math.min(min, num);
-            set.add(num);
+        if (nums.length == 0) return 0;
+        Set<Integer> hashSet = new HashSet<>();
+        for (int num : nums) {
+            hashSet.add(num);
         }
-        int count = 1;
-        for (Iterator<Integer> iterator =set.iterator();iterator.hasNext();) {
-            min+=1;
-            while(set.contains(min))
-                count++;
+        int result = Integer.MIN_VALUE;
+        for (Iterator<Integer> iterator = hashSet.iterator(); iterator.hasNext(); ) {
+            int num = iterator.next();
+            if (hashSet.contains(num - 1)) {
+                continue;
+            }
+            int curLen = 1;
+            int curNum = num;
+            while (hashSet.contains(curNum + 1)) {
+                curLen++;
+                curNum++;
+            }
+            result = Math.max(result, curLen);
         }
-        return count;
+        return result;
     }
-
 
 
 }
