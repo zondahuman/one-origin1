@@ -1,10 +1,9 @@
-package com.abin.algo.leetcode.dp;
-
+package com.abin.lee.algo.leetcode.questions.array.one;
 /**
  * 53. 最大子数组和
  * https://labuladong.online/algo/dynamic-programming/maximum-subarray/
  */
-public class L53 {
+public class L53MaxSubArray {
     public int maxSubArray(int[] nums) {
         int preSum = 0;
         int maxSum = nums[0];
@@ -49,8 +48,5 @@ public class L53 {
         }
         return maxSum;
     }
-
-
-
 
 }
