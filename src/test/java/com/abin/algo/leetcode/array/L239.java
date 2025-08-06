@@ -34,6 +34,7 @@ public class L239 {
                 deque.pollLast();
             }
             deque.offerLast(i);
+            //检查队首索引是否在窗口内：如果队首索引小于等于i-k（即不在当前窗口内），则将其从队首移除。
             while(deque.peekFirst()<=i-k){
                 deque.pollFirst();
             }
