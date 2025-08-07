@@ -13,7 +13,7 @@ public class L61 {
      * @return
      */
     public ListNode rotateRight(ListNode head, int k) {
-        if (null == head || k ==0 || head.next == null) return null;
+        if (null == head || k ==0 || head.next == null) return head;
         ListNode listNode = head;
         int n = 1;
         while(null != listNode.next){
