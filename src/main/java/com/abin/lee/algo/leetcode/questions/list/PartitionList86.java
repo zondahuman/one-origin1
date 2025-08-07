@@ -29,6 +29,8 @@ public class PartitionList86 {
                 p2.next = p ;
                 p2 = p2.next;
             }
+            //：由于原链表的节点会被分配到两个不同的子链表中，必须断开其原有的 next指针，否则会导致子链表之间错误连接（例如形成环）。
+            //：先用 temp保存原链表的下一个节点（避免丢失后续节点），再将当前节点的 next置为 null，最后将 p移动到 temp继续遍历。
             ListNode temp = p.next;
             p.next = null;
             p = temp;
