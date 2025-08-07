@@ -7,6 +7,10 @@ import org.junit.Test;
  * 235. 二叉搜索树的最近公共祖先
  * https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
  * https://labuladong.online/algo/practice-in-action/lowest-common-ancestor-summary/
+ * 一共就三种情况，搞清楚这个就很简单了。
+ * 1、如果当前节点比q。p两个节点都大的话，那么最近的公共祖先一定在当前节点的左边
+ * 2、如果当前节点比q，p两个节点都小的话，那么最近的公共祖先一定在当前节点的右边
+ * 3、如果当前节点刚好处于中间的位置，那么当前节点就是q，p的最近公共祖先
  */
 public class L235LowestCommonAncestorofaBinarySearchTree {
     public static class TreeNode {
