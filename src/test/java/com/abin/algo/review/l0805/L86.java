@@ -26,16 +26,12 @@ public class L86 {
                 p1.next = node;
                 p1 = p1.next;
             }
-
+            ListNode temp = node.next;
+            node.next = null;
+            node = temp;
         }
-        ListNode listNode = p1.next;
-        while(null != listNode){
-            if(listNode.val < x){
-                listNode = listNode.next;
-            }
-        }
-        listNode.next = dummy2;
-        return dummy1.next;
+        p2.next = dummy1.next;
+        return dummy2.next;
     }
 
 
