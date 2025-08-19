@@ -1,5 +1,7 @@
 package com.abin.algo.review.l0819;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -15,13 +17,8 @@ public class L559 {
      * @return
      */
     public int maxDepth(Node root) {
-        if (null == root)
-            return 0;
-        int maxLen = 0;
-        for (Node temp : root.children) {
-            maxLen = Math.max(maxLen, maxDepth(temp));
-        }
-        return 1 + maxLen;
+      
+        return 0;
     }
 
     public int maxDepthRecurse(Node root) {
