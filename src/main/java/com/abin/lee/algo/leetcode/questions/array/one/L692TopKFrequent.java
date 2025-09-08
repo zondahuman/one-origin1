@@ -1,12 +1,11 @@
-package com.abin.algo.review.l0908;
+package com.abin.lee.algo.leetcode.questions.array.one;
 
-import java.sql.Array;
 import java.util.*;
 
 /**
  * 692. 前K个高频单词
  */
-public class L692 {
+public class L692TopKFrequent {
 
     /**
      * 给定一个单词列表 words 和一个整数 k ，返回前 k 个出现次数最多的单词。
