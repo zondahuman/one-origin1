@@ -15,15 +15,19 @@ public class L124 {
      * @return
      */
     public int maxPathSum(TreeNode root) {
-
+        if(null == root) return 0;
+        recurse(root);
+        return maxSum;
     }
-
+    int maxSum = Integer.MIN_VALUE;
     int recurse(TreeNode root){
         if(null == root) return 0;
         int leftMax = Math.max(0, recurse(root.left));
         int rightMax = Math.max(0, recurse(root.right));
         // 后序遍历位置，顺便更新最大路径和
-        int max = root.val + leftMax + rightMax ;
+        int partSum = root.val + leftMax + rightMax ;
+        maxSum = Math.max(maxSum, partSum);
+        return root.val + Math.max(leftMax, rightMax);
     }
 
 
