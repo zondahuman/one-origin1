@@ -25,9 +25,9 @@ public class L451FrequencySort {
         }
         StringBuilder builder = new StringBuilder();
         while(!pq.isEmpty()){
-            Map.Entry<Character, Integer> entry = pq.poll();
-            String part = String.valueOf(entry.getKey()).repeat(entry.getValue());
-            builder.append(part);
+//            Map.Entry<Character, Integer> entry = pq.poll();
+//            String part = String.valueOf(entry.getKey()).repeat(entry.getValue());
+//            builder.append(part);
         }
         return builder.toString();
     }
