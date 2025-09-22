@@ -4,6 +4,25 @@ package com.abin.lee.algo.leetcode.questions.dp;
  * 1143. 最长公共子序列
  * https://leetcode.cn/problems/longest-common-subsequence/description/
  * https://labuladong.online/algo/dynamic-programming/longest-common-subsequence/
+ *
+ * // 定义：计算 s1[i..] 和 s2[j..] 的最长公共子序列长度
+ * int dp(String s1, int i, String s2, int j) {
+ *     if (s1.charAt(i) == s2.charAt(j)) {
+ *         return 1 + dp(s1, i + 1, s2, j + 1);
+ *     } else {
+ *         // s1[i] 和 s2[j] 中至少有一个字符不在 lcs 中，
+ *         // 穷举三种情况的结果，取其中的最大结果
+ *         return max(
+ *
+ *             // 情况一、s1[i] 不在 lcs 中
+ *             dp(s1, i + 1, s2, j),
+ *             // 情况二、s2[j] 不在 lcs 中
+ *             dp(s1, i, s2, j + 1),
+ *             // 情况三、都不在 lcs 中
+ *             dp(s1, i + 1, s2, j + 1)
+ *         );
+ *     }
+ * }
  */
 public class L1143LongestCommonSubsequence {
     /**
