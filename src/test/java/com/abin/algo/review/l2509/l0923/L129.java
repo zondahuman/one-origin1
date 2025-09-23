@@ -1,7 +1,5 @@
 package com.abin.algo.review.l2509.l0923;
 
-import com.abin.lee.algo.leetcode.questions.tree.binary.L101SymmetricTree;
-
 /**
  * 129. 求根节点到叶节点数字之和
  */
