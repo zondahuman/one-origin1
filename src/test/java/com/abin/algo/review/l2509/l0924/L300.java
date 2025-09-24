@@ -1,5 +1,6 @@
 package com.abin.algo.review.l2509.l0924;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +18,21 @@ public class L300 {
      * 双指针yes，哈希表no，广度深度遍历no，动态规划不确定没做过no？
      */
     public int lengthOfLIS(int[] nums) {
-
-        return 0;
+        int n = nums.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        for (int i = 0; i <n ; i++) {
+            for (int j = 0; j <i ; j++) {
+                if(nums[i]>nums[j]){
+                    dp[i] = Math.max(dp[i], dp[j]+1) ;
+                }
+            }
+        }
+        int result = 0;
+        for (int i = 0; i <dp.length ; i++) {
+            result = Math.max(result, dp[i]);
+        }
+        return result;
     }
 
 
