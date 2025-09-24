@@ -1,0 +1,27 @@
+package com.abin.algo.review.l2509.l0924;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 300. 最长递增子序列
+ */
+public class L300 {
+
+    /**
+     * 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+     * 子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。
+     * 例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+     * @param nums
+     * @return
+     * 双指针yes，哈希表no，广度深度遍历no，动态规划不确定没做过no？
+     */
+    public int lengthOfLIS(int[] nums) {
+
+        return 0;
+    }
+
+
+
+
+}
