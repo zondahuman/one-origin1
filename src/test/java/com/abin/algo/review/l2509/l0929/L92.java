@@ -1,6 +1,4 @@
-package com.abin.algo.review.l2509.l0925;
-
-import com.abin.algo.review.l2509.l0903.L21;
+package com.abin.algo.review.l2509.l0929;
 
 /**
  * 92. 反转链表 II
@@ -20,17 +18,18 @@ public class L92 {
         dummy.next = head;
         ListNode pre = dummy;
         for (int i = 0; i <left-1 ; i++) {
-            pre = pre.next;
+            pre = pre.next ;
         }
         ListNode cur = pre.next;
         for (int i = 0; i <right-left ; i++) {
-            ListNode next = cur.next ;
+            ListNode next = cur.next;
             cur.next = next.next;
             next.next = pre.next;
             pre.next = next;
         }
         return dummy.next;
     }
+
 
 
     class ListNode {
@@ -41,6 +40,7 @@ public class L92 {
             next = null;
         }
     }
+
 
 
 }
