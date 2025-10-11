@@ -1,4 +1,4 @@
-package com.abin.algo.review.l2510;
+package com.abin.algo.review.l2510.l1010;
 
 import com.abin.algo.review.l2509.l0930.L1669;
 
@@ -16,10 +16,20 @@ public class L92 {
      * @return
      */
     public ListNode reverseBetween(ListNode head, int left, int right) {
-
-
-
-        return null;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
+        for (int i = 0; i <left-1 ; i++) {
+            pre = pre.next;
+        }
+        ListNode cur = pre.next;
+        for (int i = 0; i <right-left ; i++) {
+            ListNode next = cur.next;
+            cur.next = next.next;
+            next.next = pre.next;
+            pre.next = next;
+        }
+        return dummy.next;
     }
 
 
