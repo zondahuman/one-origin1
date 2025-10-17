@@ -1,5 +1,7 @@
 package com.abin.algo.review.l2510.l1011;
 
+import java.util.List;
+
 /**
  * 1669. 合并两个链表
  */
@@ -15,11 +17,24 @@ public class L1669 {
      * @return
      */
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
-
+        ListNode front = list1;
+        for (int i = 0; i < a-1; i++) {
+            front = front.next;
+        }
+        ListNode back = front;
+        for (int i = 0; i <b-a+2 ; i++) {
+            back = back.next;
+        }
+        front.next = list2;
+        while(list2.next != null){
+            list2 = list2.next;
+        }
+        list2.next = back;
+        return list1;
     }
 
 
-    
+
     class ListNode {
         int val;
         ListNode next;
