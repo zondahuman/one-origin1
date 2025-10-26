@@ -14,21 +14,20 @@ public class L128 {
      * @return
      */
     public int longestConsecutive(int[] nums) {
-        int n = nums.length;
         HashSet<Integer> hashSet = new HashSet();
         for (Integer num:nums) {
             hashSet.add(num);
         }
         int maxLen = 0;
-        for (Integer num:nums) {
+        for (Integer num:hashSet) {
             if(hashSet.contains(num-1)){
                 continue;
             }
             int curNum = num;
             int curLen = 1;
             while(hashSet.contains(curNum+1)){
-                curNum+=1;
-                curLen+=1;
+                curNum++;
+                curLen++;
             }
             maxLen = Math.max(maxLen, curLen);
         }
