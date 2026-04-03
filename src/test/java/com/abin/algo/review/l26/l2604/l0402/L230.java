@@ -1,4 +1,4 @@
-package com.abin.algo.review.l26.l2604;
+package com.abin.algo.review.l26.l2604.l0402;
 
 import com.abin.lee.algo.leetcode.questions.tree.binary.L222CountCompleteTreeNodes;
 
