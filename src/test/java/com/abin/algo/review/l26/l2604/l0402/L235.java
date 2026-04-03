@@ -41,15 +41,7 @@ public class L235 {
         }
     }
 
-    TreeNode result = null;
-    void traverse(TreeNode root, TreeNode p, TreeNode q){
-        if(null == root)
-            return;
-        if(){
-
-        }
-
-    }
+ 
 
     public static class TreeNode {
         int val;
