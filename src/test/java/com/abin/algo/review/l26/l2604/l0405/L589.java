@@ -1,9 +1,6 @@
 package com.abin.algo.review.l26.l2604.l0405;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * 589. N 叉树的前序遍历
@@ -17,16 +14,16 @@ public class L589 {
      * @return
      */
     public List<Integer> preorder(Node root) {
-        Deque<Node> deque = new ArrayDeque<>();
+        Stack<Node> stack = new Stack<>();
         List<Integer> resultList = new ArrayList<>();
-        deque.offer(root);
-        while(!deque.isEmpty()){
-            int size = deque.size() ;
-            for (int i = 0; i <size ; i++) {
-                Node node = deque.poll();
-                resultList.add(node.val);
-                for (Node child:node.children)
-                    deque.offer(child);
+        stack.push(root);
+        while(!stack.isEmpty()){
+            Node node = stack.pop();
+            resultList.add(node.val);
+            int size = node.children.size() ;
+            //i=size-1，先压进去size-1，再压进去0，那么栈出来的时候顺序就是，先出0，再出size-1
+            for (int i = size-1; i >=0 ; --i) {
+                stack.push(node.children.get(i));
             }
         }
         return resultList ;
