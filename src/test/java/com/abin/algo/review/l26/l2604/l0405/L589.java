@@ -14,8 +14,10 @@ public class L589 {
      * @return
      */
     public List<Integer> preorder(Node root) {
-        Stack<Node> stack = new Stack<>();
         List<Integer> resultList = new ArrayList<>();
+        if(null == root)
+            return resultList;
+        Stack<Node> stack = new Stack<>();
         stack.push(root);
         while(!stack.isEmpty()){
             Node node = stack.pop();
