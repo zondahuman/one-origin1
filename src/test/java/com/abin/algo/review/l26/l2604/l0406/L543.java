@@ -1,16 +1,16 @@
 package com.abin.algo.review.l26.l2604.l0406;
 
 /**
- * 129. 求根节点到叶节点数字之和
- * https://leetcode.cn/problems/sum-root-to-leaf-numbers/description/
+ * 543. 二叉树的直径
+ * https://leetcode.cn/problems/diameter-of-binary-tree/description/
  */
 public class L543 {
     /**
-     * 给你一个二叉树的根节点 root ，树中每个节点都存放有一个 0 到 9 之间的数字。
-     * 每条从根节点到叶节点的路径都代表一个数字：
-     * 例如，从根节点到叶节点的路径 1 -> 2 -> 3 表示数字 123 。
-     * 计算从根节点到叶节点生成的 所有数字之和 。
-     * 叶节点 是指没有子节点的节点。
+     *给你一棵二叉树的根节点，返回该树的 直径 。
+     *
+     * 二叉树的 直径 是指树中任意两个节点之间最长路径的 长度 。这条路径可能经过也可能不经过根节点 root 。
+     *
+     * 两节点之间路径的 长度 由它们之间边数表示。
      * @param root
      * @return
      */
