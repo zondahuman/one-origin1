@@ -35,20 +35,20 @@ public class L451 {
      * @return
      */
     public String frequencySort(String s) {
-        Map<Character,Integer> frequencyMap = new HashMap<>();
-        for (int i = 0; i <s.length() ; i++) {
-            frequencyMap.put(s.charAt(i), frequencyMap.getOrDefault(s.charAt(i), 0)+1);
-        }
-        PriorityQueue<Map.Entry<Character,Integer>> pq = new PriorityQueue<>((a,b)->(b.getValue().compareTo(a.getValue())));
-        for(Map.Entry<Character,Integer> entry:frequencyMap.entrySet()){
-            pq.offer(entry);
-        }
+//        Map<Character,Integer> frequencyMap = new HashMap<>();
+//        for (int i = 0; i <s.length() ; i++) {
+//            frequencyMap.put(s.charAt(i), frequencyMap.getOrDefault(s.charAt(i), 0)+1);
+//        }
+//        PriorityQueue<Map.Entry<Character,Integer>> pq = new PriorityQueue<>((a,b)->(b.getValue().compareTo(a.getValue())));
+//        for(Map.Entry<Character,Integer> entry:frequencyMap.entrySet()){
+//            pq.offer(entry);
+//        }
         StringBuffer sb = new StringBuffer();
-        while(!pq.isEmpty()){
-            Map.Entry<Character, Integer> entry = pq.poll();
-            String part = entry.getKey().toString().repeat(entry.getValue());
-            sb.append(part);
-        }
+//        while(!pq.isEmpty()){
+//            Map.Entry<Character, Integer> entry = pq.poll();
+//            String part = entry.getKey().toString().repeat(entry.getValue());
+//            sb.append(part);
+//        }
         return sb.toString();
     }
 
